@@ -50,6 +50,39 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+
+                <!-- Inventory -->
+                <li class="nav-item">
+                    <a href="" class="nav-link {{ Route::is('inventory.index') ? 'active' : '' }}">
+                        <i class="icon-box"></i>
+                        <span>Inventory</span>
+                    </a>
+                </li>
+
+                <!-- Client Management -->
+                <li class="nav-item">
+                    <a href="" class="nav-link {{ Route::is('clients.index') ? 'active' : '' }}">
+                        <i class="icon-address-book"></i>
+                        <span>Client Management</span>
+                    </a>
+                </li>
+
+                <!-- Asset Allocation -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link {{ Route::is('assets.index') ? 'active' : '' }}">
+                        <i class="icon-lan"></i>
+                        <span>Asset Allocation</span>
+                    </a>
+                </li>
+
+                <!-- Accounts -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link {{ Route::is('accounts.index') ? 'active' : '' }}">
+                        <i class="icon-coins"></i>
+                        <span>Accounts</span>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="{{ route('notice_board.index') }}" class="nav-link {{ (Route::is('NoticeBoard.index')) ? 'active' : '' }}">
                         <i class="icon-bubble-notification"></i>
