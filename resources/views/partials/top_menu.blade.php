@@ -1,7 +1,9 @@
+
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="mt-2 mr-5">
         <a href="{{ route('dashboard') }}" class="d-inline-block">
-        <h4 class="text-bold text-white">{{ Qs::getSystemName() }}</h4>
+            <h4 class="text-bold text-white chokro-font">Chokrojan Management</h4>
+
         </a>
     </div>
   {{--  <div class="navbar-brand">
@@ -69,3 +71,12 @@
         </ul>
     </div>
 </div>
+<style>
+    .chokro-font {
+        font-family: 'Comfortaa', cursive;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        margin: 0;
+    }
+</style>
