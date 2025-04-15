@@ -177,6 +177,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         });
 
         Route::resource('students', 'StudentRecordController');
+        Route::resource('account_charts', 'AccountChartController');
+        Route::resource('client', 'ClientController');
+        Route::resource('assets', 'AssetController');
+        Route::resource('asset-allocations', 'AssetAllocationController');
         Route::resource('notice_board', 'NoticeBoardController');
         Route::resource('expenses', 'ExpensesController');
         Route::resource('users', 'UserController');

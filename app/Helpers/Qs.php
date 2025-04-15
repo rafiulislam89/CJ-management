@@ -267,9 +267,13 @@ class Qs
         return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
     }
 
+//    public static function getSetting($type)
+//    {
+//        return Setting::where('type', $type)->first()->description;
+//    }
     public static function getSetting($type)
     {
-        return Setting::where('type', $type)->first()->description;
+        return Setting::where('type', $type)->value('description');
     }
 
     public static function getCurrentSession()
