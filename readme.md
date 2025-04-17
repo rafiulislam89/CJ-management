@@ -110,7 +110,6 @@ After seeding. Login details as follows:
 
 Your Contributions & suggestions are welcomed. Please use Pull Request
 
-### **Security Vulnerabilities**
 
 
 # Laravel Project Setup Guide
