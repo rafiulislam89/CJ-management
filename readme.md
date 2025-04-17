@@ -142,17 +142,16 @@ composer install
 
 ### 3. Create Environment File
 
-
-
-mkdir storage\framework\views
-mkdir storage\framework\cache
-mkdir storage\logs
-mkdir bootstrap\cache
-mkdir storage\framework\sessions
-
-
-
 cp .env.example .env
+
+
+### 4. Create folder
+
+1.mkdir storage\framework\views
+2.mkdir storage\framework\cache
+3.mkdir storage\logs
+4.mkdir bootstrap\cache
+5.mkdir storage\framework\sessions
 
 ### 4.Configure Environment Variables
 Open .env and set your local database configuration:
