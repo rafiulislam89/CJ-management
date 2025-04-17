@@ -141,7 +141,10 @@ Make sure you have the following installed:
 composer install
 
 ### 3. Create Environment File
-Copy the .env.example file to .env:
+
+
+
+
 
 cp .env.example .env
 
@@ -159,9 +162,11 @@ DB_PASSWORD=your_password
 ### 5.Generate Application Key
 
 php artisan key:generate
+
 ### 6. Run Migrations
 
 php artisan migrate
+
 (Optional) If you have seeders or demo data:
 
 ### 7. Run Migrations
