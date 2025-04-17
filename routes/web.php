@@ -1,4 +1,8 @@
 <?php
+
+use App\Http\Controllers\SupportTeam\AssetAllocationController;
+use App\Http\Controllers\SupportTeam\AssetController;
+
 Route::get('/optimize', function () {
     Artisan::call('optimize:clear');
     return 'Optimization completed!';
@@ -181,6 +185,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('client', 'ClientController');
         Route::resource('assets', 'AssetController');
         Route::resource('asset-allocations', 'AssetAllocationController');
+
+        // AJAX routes
+        Route::get('/ajax/get-brands', [AssetAllocationController::class, 'getBrands'])->name('ajax.getBrands');
+        Route::get('/ajax/get-models', [AssetAllocationController::class, 'getModels'])->name('ajax.getModels');
+        Route::get('/ajax/serials', [AssetAllocationController::class, 'getSerialNumbers'])->name('ajax.getSerialNumbers');
+
         Route::resource('notice_board', 'NoticeBoardController');
         Route::resource('expenses', 'ExpensesController');
         Route::resource('users', 'UserController');
@@ -194,6 +204,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::get('/profit_loss_report/{month?}/{year?}', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
         Route::get('/yearly_profit_loss_report/{month?}/{year?}', 'PaymentController@yearly_profit_loss_report')->name('yearly_profit_loss_report.index');
         Route::get('student_info/print/{sr_id}', 'StudentRecordController@info_print')->name('student.print');
+
+
+
+
 
 
     });
