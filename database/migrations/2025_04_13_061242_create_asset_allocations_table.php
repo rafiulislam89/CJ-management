@@ -8,7 +8,6 @@ class CreateAssetAllocationsTable extends Migration
 {
     public function up()
     {
-        // Only for dev: optionally drop if exists
         if (Schema::hasTable('asset_allocations')) {
             Schema::drop('asset_allocations');
         }
@@ -18,11 +17,11 @@ class CreateAssetAllocationsTable extends Migration
 
             // Foreign keys
             $table->unsignedBigInteger('client_id');
-            $table->unsignedBigInteger('assets_id'); // renamed from assets_id for Laravel standard
+            $table->unsignedBigInteger('assets_id');
 
             // Allocation fields
             $table->date('allocation_date');
-            $table->date('expiry_date')->nullable();
+            $table->date('expiry_date');
             $table->enum('status', ['active', 'pending', 'expired'])->default('active');
 
             $table->timestamps();

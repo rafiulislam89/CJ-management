@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\SupportTeam;
 
+use Illuminate\Support\Str;
 use App\Helpers\Qs;
 use App\Http\Controllers\Controller;
 use App\Models\Asset;
@@ -9,17 +10,10 @@ use Illuminate\Http\Request;
 
 class AssetController extends Controller
 {
-
-//    public function index()
-//    {
-//        $assets = Asset::all();
-//        return view('pages.support_team.asset.list', ['assets' => $assets]);
-//    }
-
     public function index()
     {
         $assets = Asset::all();
-        $serialNumber = 'Cj-' . strtoupper(uniqid()); // or use your custom format
+        $serialNumber = 'Cj-' . strtoupper(Str::random(6));
 
         return view('pages.support_team.asset.list', [
             'assets' => $assets,
@@ -59,7 +53,7 @@ class AssetController extends Controller
 
         Asset::insert($data);
 
-        return Qs::storeOk('assets.index'); // Make sure this route name exists
+        return Qs::storeOk('assets.index');
     }
 
 
@@ -74,7 +68,7 @@ class AssetController extends Controller
     {
         $request->validate([
             'category' => 'required|string|max:255',
-            'brand' => 'nullable|string|max:255', // ✅ Added
+            'brand' => 'nullable|string|max:255',
             'model' => 'nullable|string|max:255',
             'serial_number' => 'required|string|max:255',
             'status' => 'required|in:active,in_use,under_maintenance,retired',
