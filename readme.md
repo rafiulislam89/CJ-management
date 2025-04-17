@@ -134,7 +134,7 @@ Make sure you have the following installed:
 ```bash
 ### 1. Clone the Repository
 
-
+git clone
 
 ### 2. Install PHP Dependencies
 
@@ -153,7 +153,7 @@ cp .env.example .env
 4.mkdir bootstrap\cache
 5.mkdir storage\framework\sessions
 
-### 4.Configure Environment Variables
+### 5.Configure Environment Variables
 Open .env and set your local database configuration:
 
 DB_CONNECTION=mysql
@@ -162,19 +162,18 @@ DB_PORT=3306
 DB_DATABASE=your_database
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
-### **Security Vulnerabilities**
 
-### 5.Generate Application Key
+### 6.Generate Application Key
 
 php artisan key:generate
 
-### 6. Run Migrations
+### 7. Run Migrations
 
 php artisan migrate
 
 (Optional) If you have seeders or demo data:
 
-### 7. Run Migrations
+### 8. Run Migrations
 
 php artisan db:seed
 
