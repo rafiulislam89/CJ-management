@@ -144,6 +144,12 @@ composer install
 
 
 
+mkdir storage\framework\views
+mkdir storage\framework\cache
+mkdir storage\logs
+mkdir bootstrap\cache
+mkdir storage\framework\sessions
+
 
 
 cp .env.example .env
