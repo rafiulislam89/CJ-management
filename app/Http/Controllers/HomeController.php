@@ -39,15 +39,22 @@ class HomeController extends Controller
     {
         $d = [];
 
-        // For team SAT, include users data
         if(Qs::userIsTeamSAT()){
             $d['users'] = $this->user->getAll();
         }
 
-        // Get total asset count
         $d['assetCount'] = \App\Models\Asset::count();
+
+        // Get categories with count
+        $d['categories'] = \App\Models\Asset::select('category')
+            ->groupBy('category')
+            ->selectRaw('category, COUNT(*) as count')
+            ->get();
+
+        $d['allocationCount'] = \App\Models\AssetAllocation::count(); // <-- NEW LINE
 
         return view('pages.support_team.dashboard', $d);
     }
+
 
 }
