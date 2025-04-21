@@ -24,6 +24,10 @@
 **Print Tabulation Sheet & Marksheet**
 <img src="https://i.ibb.co/QmscPfn/capture-20210530-115802.png" alt="tabulation-sheet" border="0">
 
+**Chokrojan Management**
+<img width="953" alt="Chokjan" src="https://github.com/user-attachments/assets/9c3b43f0-96ad-45e5-9c15-e1827e502c91" />
+
+
 <hr />  
 
 There are 7 types of user accounts. They include:
