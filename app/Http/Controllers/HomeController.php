@@ -37,11 +37,17 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $d=[];
+        $d = [];
+
+        // For team SAT, include users data
         if(Qs::userIsTeamSAT()){
             $d['users'] = $this->user->getAll();
         }
 
+        // Get total asset count
+        $d['assetCount'] = \App\Models\Asset::count();
+
         return view('pages.support_team.dashboard', $d);
     }
+
 }

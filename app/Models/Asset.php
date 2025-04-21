@@ -11,4 +11,6 @@ class Asset extends Model
     protected $fillable = [
         'category', 'model', 'brand', 'serial_number', 'image', 'start_date', 'end_date', 'status', 'user_id',
     ];
+    public $timestamps = true; // This is optional because it's true by default
+
 }

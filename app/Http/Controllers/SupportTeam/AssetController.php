@@ -13,13 +13,19 @@ class AssetController extends Controller
     public function index()
     {
         $assets = Asset::all();
-        $serialNumber = 'Cj-' . strtoupper(Str::random(6));
+        $assetCount = $assets->count(); // total number of assets
+        $serialNumber = 'Cj-' ;
+        $assets = Asset::orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return view('pages.support_team.asset.list', [
             'assets' => $assets,
+            'assetCount' => $assetCount,
             'serialNumber' => $serialNumber,
         ]);
     }
+
 
     public function store(Request $request)
     {
@@ -27,8 +33,8 @@ class AssetController extends Controller
             'category' => 'required|string|max:255',
             'brand' => 'nullable|string|max:255', // Added
             'model' => 'nullable|string|max:255',
-            'serial_number' => 'required|string|max:255|unique:assets,serial_number',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'serial_number' => 'required|string|max:255',
+            'image' => 'nullable|image|max:2048',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
             'status' => 'required|in:active,in_use,under_maintenance,retired',
@@ -51,7 +57,7 @@ class AssetController extends Controller
             $data['image'] = $imageName;
         }
 
-        Asset::insert($data);
+        Asset::create($data);
 
         return Qs::storeOk('assets.index');
     }
@@ -74,7 +80,7 @@ class AssetController extends Controller
             'status' => 'required|in:active,in_use,under_maintenance,retired',
             'start_date' => 'required|date',
             'end_date' => 'date|after_or_equal:start_date',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'image' => 'nullable|image|max:2048',
         ]);
 
         $data = $request->only(['category', 'brand', 'model', 'serial_number', 'start_date', 'end_date', 'status']);

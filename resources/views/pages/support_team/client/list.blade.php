@@ -56,7 +56,16 @@
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
-                                                @endif
+
+                                                        {{-- ✅ Allocate Asset Button --}}
+                                                        <li class="nav-item">
+                                                            <a href="{{ route('asset-allocations.index') }}" class="nav-link" id="add-allocation-tab">
+                                                                <i class="icon-plus2"></i> Add Allocation
+                                                            </a>
+                                                        </li>
+
+
+                                                    @endif
                                             </div>
                                         </div>
                                     </div>

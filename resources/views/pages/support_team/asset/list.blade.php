@@ -114,12 +114,12 @@
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
                                         Serial Number <span class="text-danger">*</span>
                                     </label>
-{{--                                    <div class="col-lg-9">--}}
-{{--                                        <input name="serial_number" value="{{ old('serial_number') }}" required type="text" class="form-control" placeholder="Unique Identifier">--}}
-{{--                                    </div>--}}
                                     <div class="col-lg-9">
-                                        <input name="serial_number" value="{{ $serialNumber }}" readonly type="text" class="form-control" placeholder="Unique Identifier">
+                                        <input name="serial_number" value="{{ old('serial_number') }}" required type="text" class="form-control" placeholder="Unique Identifier">
                                     </div>
+{{--                                    <div class="col-lg-9">--}}
+{{--                                        <input name="serial_number" value="{{ $serialNumber }}" readonly type="text" class="form-control" placeholder="Unique Identifier">--}}
+{{--                                    </div>--}}
                                 </div>
 
                                 <div class="form-group row">

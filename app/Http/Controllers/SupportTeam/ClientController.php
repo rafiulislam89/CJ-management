@@ -12,7 +12,9 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('pages.support_team.client.list', ['clients' => $clients]);
     }
 
@@ -33,7 +35,7 @@ class ClientController extends Controller
             'user_id' => auth()->user()->id,
         ];
 
-        Client::insert($data);
+        Client::create($data);
         return Qs::storeOk('client.index');
     }
 

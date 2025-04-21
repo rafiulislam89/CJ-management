@@ -52,20 +52,12 @@
                 </li>
 
                 <!-- Inventory Management -->
-                <li class="nav-item nav-item-submenu {{ Route::is('client.index') || Route::is('assets.index') || Route::is('asset-allocations.index') ? 'nav-item-open' : '' }}">
+                <li class="nav-item nav-item-submenu {{ Route::is('assets.index') || Route::is('asset-allocations.index') ? 'nav-item-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="icon-cog"></i>
                         <span>Inventory Management</span>
                     </a>
-                    <ul class="nav nav-group-sub" data-submenu-title="Inventory Management" style="{{ Route::is('clients.index') || Route::is('assets.index') || Route::is('asset-allocations.index') ? 'display: block;' : '' }}">
-                        <!-- Client Management -->
-                        <li class="nav-item">
-                            <a href="{{ route('client.index') }}" class="nav-link {{ Route::is('clients.index') ? 'active' : '' }}">
-                                <i class="icon-address-book"></i>
-                                Client Management
-                            </a>
-                        </li>
-
+                    <ul class="nav nav-group-sub" data-submenu-title="Inventory Management" style="{{ Route::is('assets.index') || Route::is('asset-allocations.index') ? 'display: block;' : '' }}">
                         <!-- Inventory -->
                         <li class="nav-item">
                             <a href="{{ route('assets.index') }}" class="nav-link {{ Route::is('assets.index') ? 'active' : '' }}">
@@ -84,7 +76,15 @@
                     </ul>
                 </li>
 
-{{--                <!-- Inventory -->--}}
+                <!-- Client Management (Separated) -->
+                <li class="nav-item">
+                    <a href="{{ route('client.index') }}" class="nav-link {{ Route::is('client.index') ? 'active' : '' }}">
+                        <i class="icon-address-book"></i>
+                        <span>Client Management</span>
+                    </a>
+                </li>
+
+                {{--                <!-- Inventory -->--}}
 {{--                <li class="nav-item">--}}
 {{--                    <a href="{{ route('assets.index') }}" class="nav-link {{ Route::is('assets.index') ? 'active' : '' }}">--}}
 {{--                        <i class="icon-box"></i>--}}
