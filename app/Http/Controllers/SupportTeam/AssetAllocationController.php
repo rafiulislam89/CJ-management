@@ -13,7 +13,11 @@ class AssetAllocationController extends Controller
 
     public function index()
     {
-        $allocations = AssetAllocation::with(['company', 'inventory'])->get();
+        $allocations = AssetAllocation::with(['company', 'inventory'])
+            ->orderByDesc('updated_at')  // Sort by the most recent update first
+            ->orderByDesc('created_at')  // Break ties by creation time
+            ->get();
+
         $clients = Client::where('status', 'active')->get();
         $assets = Asset::all();
 
@@ -129,4 +133,5 @@ class AssetAllocationController extends Controller
 
         return redirect()->route('asset-allocations.index')->with('flash_success', 'Asset allocation deleted successfully.');
     }
+
 }

@@ -15,6 +15,7 @@ class Client extends Model
         'status',
         'user_id',
     ];
+    public $timestamps = true;
 
     // Optional: relationship with User
 //    public function user()

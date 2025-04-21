@@ -35,15 +35,15 @@
            </div>
 
            <div class="col-sm-6 col-xl-4">
-               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
+               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6);">
                    <div class="media">
-                       <div class="mr-3 align-self-center">
-                           <i class="icon-pointer icon-3x opacity-75"></i>
+                       <div class="media-body">
+                           <h3 class="mb-0">{{ $assetCount }}</h3> <!-- Display total inventory count -->
+                           <span class="text-uppercase font-size-xs">Total Inventory</span> <!-- Label for inventory count -->
                        </div>
 
-                       <div class="media-body text-right">
-                           <h3 class="mb-0">{{ $users->where('user_type', 'admin')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Administrators</span>
+                       <div class="ml-3 align-self-center">
+                           <i class="icon-box icon-3x opacity-75"></i> <!-- Icon for inventory -->
                        </div>
                    </div>
                </div>
